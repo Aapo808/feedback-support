@@ -5,9 +5,8 @@ import bcrypt from 'bcrypt';
 
 const port = 3000;
 const host = 'localhost';
-// Tietokantayhteyden tiedot.
-// Käyttäjänimi 'root' ja tyhjä salasana ovat XAMPP:n oletusarvot.
 
+// Tietokantayhteyden tiedot.
 const dbHost = 'localhost';
 const dbName = 'feedback_support';
 const dbUser = 'root';
@@ -211,7 +210,7 @@ app.post('/tukipyynto/:id/status', async (req, res) => {
         const newStatus = req.body.status; // Tämä on nyt suoraan numero (1-5)
 
         // Päivitetään tukipyynnön tila
-        if (newStatus === '5') { // Jos status on "Suljettu"
+        if (newStatus === '4') { // Jos status on "Suljettu"
             await connection.execute(`
                 UPDATE support_ticket SET status = ?, handled = CURRENT_TIMESTAMP WHERE id = ?
             `, [newStatus, ticketId]);

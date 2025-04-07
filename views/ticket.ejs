@@ -74,6 +74,8 @@
                 <% }) %>
             </div>
 
+
+        <div>
             <form id="lippu" class="reply-form" action="/tukipyynto/<%= ticket.id %>/vastaa" method="POST">
                 <div class="form-group">
                     <textarea name="message" placeholder="Kirjoita vastaus..." required></textarea>
@@ -86,6 +88,8 @@
                 </div>
                 <button type="submit">Vastaa</button>
             </form>
+        </div>
+            
             
         </div>
     </div>
