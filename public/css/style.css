@@ -1,0 +1,253 @@
+/* Perusasetukset */
+body {
+    
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+/* Navigaatio */
+nav {
+    background-color: #2c3e50;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin: 2rem auto 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    border: none;
+    width: 75%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul li {
+    padding: 1rem 2rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3498db;
+}
+
+/* Pääsisältö */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+#lippu {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+}
+
+
+
+/* Taulukot */
+table {
+    width: 75%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: auto; /* Muokattu keskittämistä varten */
+}
+#kirjautuminen {
+    text-align: center;
+  
+   
+    border-radius: 8px;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem; /* Lisätty tila elementtien välille */
+    width: 30%;
+    margin: 2rem auto;
+
+    background-color: #2c3e50;
+
+    padding: 2rem;
+    border-radius: 8px;
+
+}
+
+
+th {
+  
+    padding: 1rem;
+    text-align: left;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Tukipyyntönäkymä */
+.ticket-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+}
+
+.ticket-status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Status-värit */
+.ticket-status.open { background-color: #2ecc71; color: white; }
+.ticket-status.working { background-color: #f1c40f; color: #2c3e50; }
+.ticket-status.done { background-color: #3498db; color: white; }
+.ticket-status.closed { background-color: #e74c3c; color: white; }
+
+/* Viestit */
+.messages {
+    margin: 2rem 0;
+}
+
+.message {
+    margin-bottom: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.message-header {
+    background: #2c3e50;
+    color: white;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.message-content {
+    padding: 1rem;
+    line-height: 1.5;
+}
+
+/* Vastauslomake */
+.reply-form {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #eee;
+}
+
+.reply-form textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.reply-form textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.admin-toggle {
+    margin: 1rem 0;
+}
+
+.admin-toggle label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: #2c3e50;
+}
+
+.admin-toggle input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #2c3e50;
+}
+
+button {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #3498db;
+}
+
+/* Responsiivisuus */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        padding: 0.5rem;
+    }
+    
+    .ticket-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}

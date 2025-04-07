@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asiakkaat ja käyttäjät</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/asiakkaat">Asiakkaat ja käyttäjät</a></li>
+            <li><a href="/tukipyynto">Tukipyynnöt</a></li>
+            <li><a href="/feedback">Palautteet</a></li>
+            <li><a href="/logout">Kirjaudu ulos</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Asiakkaat ja käyttäjät</h1>
+        <table>
+            <tr>
+                <th>Asiakas</th>
+                <th>Käyttäjä</th>
+                <th>Sähköposti</th>
+                <th>Admin</th>
+            </tr>
+            <% if (rows && rows.length > 0) { %>
+                <% for (const row of rows) { %>
+                    <tr>
+                        <td><%= row.name || '-' %></td>
+                        <td><%= row.fullname %></td>
+                        <td><%= row.email %></td>
+                        <td><%= row.admin ? 'Kyllä' : 'Ei' %></td>
+                    </tr>
+                <% } %>
+            <% } else { %>
+                <tr>
+                    <td colspan="4">Ei asiakkaita tietokannassa</td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+</body>
+</html>

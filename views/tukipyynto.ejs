@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tukipyynnöt</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/asiakkaat">Asiakkaat ja käyttäjät</a></li>
+            <li><a href="/tukipyynto">Tukipyynnöt</a></li>
+            <li><a href="/feedback">Palautteet</a></li>
+            <li><a href="/logout">Kirjaudu ulos</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Tukipyynnöt</h1>
+        <table>
+            <tr>
+                <th>Status</th>
+                <th>ID</th>
+                <th>Saapunut</th>
+                <th>Asiakas</th>
+                <th>Kuvaus</th>
+                <th>Käsitelty</th>
+            </tr>
+            <% if (rows && rows.length > 0) { %>
+                <% for (const row of rows) { %>
+                    <tr>
+                        <td class="status-<%= row.status.toLowerCase() %>"><%= row.status %></td>
+                        <td><a href="/tukipyynto/<%= row.id %>">#<%= row.id %></a></td>
+                        <td><%= new Date(row.arrived).toLocaleDateString('fi-FI', {
+                            day: '2-digit',
+                            month: '2-digit',
+                            year: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                        }) %></td>
+                        <td><%= row.name %></td>
+                        <td><%= row.description %></td>
+                        <td><%= row.handled ? new Date(row.handled).toLocaleDateString('fi-FI', {
+                            day: '2-digit',
+                            month: '2-digit',
+                            year: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                        }) : '-' %></td>
+                    </tr>
+                <% } %>
+            <% } else { %>
+                <tr>
+                    <td colspan="6">Ei tukipyyntöjä</td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+</body>
+</html>

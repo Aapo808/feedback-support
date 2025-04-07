@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palaute</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/asiakkaat">Asiakkaat ja käyttäjät</a></li>
+            <li><a href="/tukipyynto">Tukipyynnöt</a></li>
+            <li><a href="/feedback">Palautteet</a></li>
+            <li><a href="/logout">Kirjaudu ulos</a></li>
+        </ul>
+    </nav>
+    <h1>Palautteet</h1>
+    <table>
+        <tr><th>Päivämäärä</th><th>Lähettäjä</th><th>Sähköposti</th><th>Palaute</th></tr>
+        <% for (const row of rows) { %>
+            <tr>
+                <td><%= row.arrived %></td>
+                <td><%= row.guest_name %></td>
+                <td><%= row.guest_email %></td>
+                <td><%= row.feedback %></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>
