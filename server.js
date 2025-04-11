@@ -127,8 +127,7 @@ app.get('/tukipyynto', isAuthenticated, async (req, res) => {
         }
     }
 });
-
-app.get('/tukipyynto/:id', async (req, res) => {
+app.get('/tukipyynto/:id', isAuthenticated, async (req, res) => {
     let connection;
     try {
         connection = await mysql.createConnection({
@@ -168,7 +167,7 @@ app.get('/tukipyynto/:id', async (req, res) => {
     }
 });
 
-app.post('/tukipyynto/:id/vastaa', async (req, res) => {
+app.post('/tukipyynto/:id/vastaa', isAuthenticated ,async (req, res) => {
     let connection;
     try {
         connection = await mysql.createConnection({
@@ -196,7 +195,7 @@ app.post('/tukipyynto/:id/vastaa', async (req, res) => {
     }
 });
 
-app.post('/tukipyynto/:id/status', async (req, res) => {
+app.post('/tukipyynto/:id/status', isAuthenticated ,async (req, res) => {
     let connection;
     try {
         connection = await mysql.createConnection({
