@@ -309,4 +309,9 @@ app.get('/logout', (req, res) => {
     });
 });
 
+app.get('/kayttaja/:id', (req, res) => {
+    const userId = req.params.id;
+    // Hae käyttäjän tiedot tietokannasta ja lähetä ne käyttäjäsivulle
+});
+
 app.listen(port, host, console.log('servu pyörii'));

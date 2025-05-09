@@ -24,16 +24,18 @@
                 <th>Sähköposti</th>
                 <th>Admin</th>
             </tr>
+
             <% if (rows && rows.length > 0) { %>
                 <% for (const row of rows) { %>
                     <tr>
                         <td><%= row.name || '-' %></td>
-                        <td><%= row.fullname %></td>
+                        <td><a href="/kayttaja/<%= row.id %>"><%= row.fullname %></a></td>
                         <td><%= row.email %></td>
                         <td><%= row.admin ? 'Kyllä' : 'Ei' %></td>
                     </tr>
                 <% } %>
             <% } else { %>
+                
                 <tr>
                     <td colspan="4">Ei asiakkaita tietokannassa</td>
                 </tr>
